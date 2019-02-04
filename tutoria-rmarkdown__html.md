@@ -1,32 +1,11 @@
----
-title: "Cómo usar Rmarkdown: versión versión html"
-author: "Julio César Iturra Sanhueza - jciturra@uc.cl"
-date: '04 febrero, 2019'
-output:
-  html_document: 
-    keep_md: yes
-geometry: margin=0.78in
-header-includes:
-- \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
-- \usepackage[utf8]{inputenc}
-- \usepackage{booktabs}
-linestretch: '1.15'
-linkcolor: blue
-fontsize: 11pt
-abstract: El presente documento tiene por objetivo facilitarles la vida a través
-  del la elaboración de documentos a través de Rmarkdown. La gracia de los documentos
-  con extensión ``.rmd`` permite facilitar el uso de códigos para el cálculo matemático,
-  estimación de modelos, y, sobre todo, el reporte de sus resultados en tablas de
-  calidad.Dentro de las posibilidades, Rmarkdown permite elaborar documentos que combinan
-  el código nativo de ``R``, como también es posible emplear código ``.tex``, o
-  lo que coloquialmente se le llama ``formato latex''.
-urlcolor: blue
----
 
+## Cómo usar Rmarkdown: versión versión html
+### *Julio César Iturra Sanhueza - jciturra@uc.cl*
+
+------
 # YAML header
 
 El YAML header corresponde al lugar donde ustedes pueden determinar las opciones de su documento. Generalmente comenzamos poniendo el nombr, autoría y fecha de su documento. Agregué otras opciones que son útiles para dar formato a su documento, tales como el tamaño de la fuentes (fontsize), el interlineado (linestretch), márgenes (geometry) y abstract.
-
 
 ```r
 ---
@@ -50,7 +29,7 @@ La opción `output` tiene tres opciones para convertir su documento en `.pdf`, `
 
 \pagebreak
 
-#Introducción 
+#Introducción
 
 Este documento está enfocado al reporte en formato .pdf, dado que me parece más adecuado para el reporte de informes y trabajos académicos. A modo general, la figura a continuación muestra cómo funciona Rmarkdown cuando estamos empleando formato .pdf.
 
@@ -90,11 +69,11 @@ Finalizado este paso, pueden comenza a trabajar con Rmarkdown sin problemas.
 
 `$e=mc^2$`  $e=mc^2$
 
-`$\alpha \chi^2 \beta$` $\alpha \ \chi \ \beta$ 
+`$\alpha \chi^2 \beta$` $\alpha \ \chi \ \beta$
 
 
 
-Hay una hoja de consejos para usar Rmarkdwon que pueden encontrar [aquí](https://rmarkdown.rstudio.com/lesson-1.html). Aparecen muchos más detalles de lo que se señala en este documento. 
+Hay una hoja de consejos para usar Rmarkdwon que pueden encontrar [aquí](https://rmarkdown.rstudio.com/lesson-1.html). Aparecen muchos más detalles de lo que se señala en este documento.
 
 @. **Usar chunks**
 
@@ -109,10 +88,10 @@ Hay una hoja de consejos para usar Rmarkdwon que pueden encontrar [aquí](https:
 * `include=TRUE` Sirve para determinar si queremos que se incluya nuestro código.
 * `message=FALSE` Sirve para determinar si queremos los mensajes emergenter.
 * `warning=FALSE` Sirve para determinar si queremos las advertencias de R.
-* `results='asis'` Permite que el código creado por las funciones de R sea empleado en la compilación. 
+* `results='asis'` Permite que el código creado por las funciones de R sea empleado en la compilación.
 * ¡run! (flecha verde o ctrl+shift+enter)
 
-\pagebreak 
+\pagebreak
 
 Ejemplo:
 
@@ -134,7 +113,7 @@ velocirraptor
 @. **Paquetes especializados para reporte de tablas**
 
     * `knitr`
-    * `kableExtra` 
+    * `kableExtra`
     * `xtable`
     * `texreg`
     * `stargazer`
@@ -159,7 +138,7 @@ library(kableExtra)
 library(xtable)
 library(texreg)
 library(stargazer)
-library(dplyr) #principalmente para usar el operador %>% 
+library(dplyr) #principalmente para usar el operador %>%
 ```
 
 \pagebreak
@@ -173,7 +152,7 @@ El paquete `texreg` es muy útil cuando se trata de reportar modelos de regresi�
 
 ```r
 #Un logit fome...
-pl <- lm(voto ~ sexo + edad + educon + ecivil + ppol+ socconf+confl, data=coes, link="logit") 
+pl <- lm(voto ~ sexo + edad + educon + ecivil + ppol+ socconf+confl, data=coes, link="logit")
 ```
 
 
@@ -329,11 +308,11 @@ m1=glm(voto~sexo+edad+educon+ecivil+ppol+socconf,
        data=coes, family=binomial) #Educación continua
 m2=glm(voto~sexo+edad+educ  +ecivil+ppol+socconf,
        data=coes, family="binomial") #Educación categórica
-m3=glm(voto~sexo+edad+educon+ecivil+ppol+socconf+ppol*socconf, 
-       data=coes, family="binomial") #Interacción Posición Política*Confianza Social 
-texreg::htmlreg(list(m1,m2,m3), digits = 3,float.pos="h!",scalebox=0.50, 
+m3=glm(voto~sexo+edad+educon+ecivil+ppol+socconf+ppol*socconf,
+       data=coes, family="binomial") #Interacción Posición Política*Confianza Social
+texreg::htmlreg(list(m1,m2,m3), digits = 3,float.pos="h!",scalebox=0.50,
                caption = "Modelos Logit",
-               custom.model.names = c("Modelo 1", "Modelo 2", "Modelo 3"), 
+               custom.model.names = c("Modelo 1", "Modelo 2", "Modelo 3"),
                custom.coef.names = c("(Intercepto)","Mujer","Edad",
                                      "Educación","Soltero/a","Viudo/a",
                                      "Sep/Div/Anu","Centro","Derecha",
@@ -608,7 +587,7 @@ texreg::htmlreg(list(m1,m2,m3), digits = 3,float.pos="h!",scalebox=0.50,
 
 
 ```r
-#```{r tabla, echo=TRUE, message=FALSE, results='asis'} 
+#```{r tabla, echo=TRUE, message=FALSE, results='asis'}
 age = c(1,2,3,4,5)
 ageF = factor(age, labels=c("35-44","45-54","55-64","65-74","75-84"))
 deaths1 = c(32,104,206,186,102)
@@ -690,6 +669,4 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
 
 * [Escribir una Tesis en Rmarkdown](https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/)(Van Espen, 2017)
 * [Rmarkdown ultimate Guide](https://bookdown.org/yihui/rmarkdown/) (Xie et al. 2018)
-* [KableExtra y Latex](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) (Zhu, 2018) 
-
-
+* [KableExtra y Latex](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) (Zhu, 2018)
