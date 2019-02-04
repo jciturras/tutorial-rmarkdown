@@ -54,7 +54,7 @@ La opción `output` tiene tres opciones para convertir su documento en `.pdf`, `
 Este documento está enfocado al reporte en formato .pdf, dado que me parece más adecuado para el reporte de informes y trabajos académicos. A modo general, la figura a continuación muestra cómo funciona Rmarkdown cuando estamos empleando formato .pdf.
 
 ```{r, echo=FALSE, out.width='70%', fig.align='center', fig.pos="h!"}
-knitr::include_graphics(c("rmarkdownflow.png","markdown2.png"))
+knitr::include_graphics(c("images/rmarkdownflow.png","images/markdown2.png"))
 ```
 
 El primer cuadro es su documento en Rmarkdown, donde escriben su código en R y lo combinan con texto. [Knitr](https://yihui.name/knitr/) es el paquete que convierte todo lo que ustedes escriben a formato Markdown (.md), lo cua posteriormente es transformado por [Pandoc](https://pandoc.org/) en cualquiera de los formatos que ustedes necesiten (.pdf, .html o .doc). El resultado de este proceso es su documento final.
@@ -111,7 +111,7 @@ x <- c(1,2,3,4)
 ```
 
 ```{r, echo=FALSE, out.width='95%', fig.align='center', fig.pos="h!"}
-knitr::include_graphics("chunk1.png")
+knitr::include_graphics("images/chunk1.png")
 ```
 
 
