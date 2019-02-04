@@ -1,5 +1,5 @@
 
-## Cómo usar Rmarkdown: versión versión html
+## Cómo usar Rmarkdown: versión markdown - html
 ### *Julio César Iturra Sanhueza - jciturra@uc.cl*
 
 ------
@@ -26,8 +26,6 @@ abstract: "El presente documento tiene por objetivo facilitarles la vida  ..."
 ```
 
 La opción `output` tiene tres opciones para convertir su documento en `.pdf`, `.html` y `.doc`. A mi me gusta realizarlo en pdf para los informes y html para mis reportes de datos y exploración, dado que los trabajos en html pueden ser abiertos en cualquier sistema operativo sin la necesidad de un software especializado como Adove o Nitro reader (por dar algunos ejemplos).
-
-\pagebreak
 
 #Introducción
 
@@ -90,8 +88,6 @@ Hay una hoja de consejos para usar Rmarkdwon que pueden encontrar [aquí](https:
 * `warning=FALSE` Sirve para determinar si queremos las advertencias de R.
 * `results='asis'` Permite que el código creado por las funciones de R sea empleado en la compilación.
 * ¡run! (flecha verde o ctrl+shift+enter)
-
-\pagebreak
 
 Ejemplo:
 
@@ -297,7 +293,6 @@ texreg::htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
 </tr>
 </table>
 
-\pagebreak
 
 ## Con modelos anidados
 
@@ -665,7 +660,7 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
 </table>
 
 
-#Algunos tutoriales que me gustan:
+# Algunos tutoriales que me gustan:
 
 * [Escribir una Tesis en Rmarkdown](https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/)(Van Espen, 2017)
 * [Rmarkdown ultimate Guide](https://bookdown.org/yihui/rmarkdown/) (Xie et al. 2018)
