@@ -3,7 +3,8 @@ title: "Cómo usar Rmarkdown: versión versión html"
 author: "Julio César Iturra Sanhueza - jciturra@uc.cl"
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 output:
-  html_document: default
+  html_document: 
+    keep_md: yes
 geometry: margin=0.78in
 header-includes:
 - \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
