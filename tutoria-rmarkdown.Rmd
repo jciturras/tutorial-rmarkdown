@@ -9,7 +9,7 @@ urlcolor: "blue"
 linkcolor: "blue"
 output: pdf_document
 header-includes:
-   - \usepackage[spanish,es-tabla]{babel}
+   - \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
    - \usepackage[utf8]{inputenc}
    - \usepackage{booktabs}
 abstract: "El presente documento tiene por objetivo facilitarles la vida a través del la elaboración de documentos a través de Rmarkdown. La gracia de los documentos con extensión ``.rmd`` permite facilitar el uso de códigos para el cálculo matemático, estimación de modelos, y, sobre todo, el reporte de sus resultados en tablas de calidad.Dentro de las posibilidades, Rmarkdown permite elaborar documentos que combinan el código nativo de ``R``, como también es posible emplear código ``.tex``, o lo que coloquialmente se le llama ``formato latex''."
@@ -29,7 +29,7 @@ linestretch: "1.0"
 geometry: margin=0.78in
 output: pdf_document
 header-includes:
-   - \usepackage[spanish,es-tabla]{babel} #Para que aparezan "Tabla" y "Figura" en español
+   - \usepackage[spanish,es-tabla,es-nodecimaldot]{babel} #Para "Tabla" y "Figura" en español. Punto para decimal.
    - \usepackage[utf8]{inputenc}
    - \usepackage{booktabs}
 abstract: "El presente documento tiene por objetivo facilitarles la vida  ..."
@@ -163,7 +163,7 @@ El paquete `texreg` es muy útil cuando se trata de reportar modelos de regresi�
 
 ```{r, include=FALSE}
 rm(list=ls())
-load("C:/Users/JC/Desktop/Ayudantía Análisis de Datos Categorícos (2018)/Guías/Guía 2/coes.RData")
+load("coes.RData")
 ```
 
 ```{r modelo-logit, echo=TRUE, message=FALSE, warning=FALSE, results='asis'}
