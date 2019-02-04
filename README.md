@@ -27,7 +27,7 @@ abstract: "El presente documento tiene por objetivo facilitarles la vida  ..."
 
 La opción `output` tiene tres opciones para convertir su documento en `.pdf`, `.html` y `.doc`. A mi me gusta realizarlo en pdf para los informes y html para mis reportes de datos y exploración, dado que los trabajos en html pueden ser abiertos en cualquier sistema operativo sin la necesidad de un software especializado como Adove o Nitro reader (por dar algunos ejemplos).
 
-#Introducción
+# Introducción
 
 Este documento está enfocado al reporte en formato .pdf, dado que me parece más adecuado para el reporte de informes y trabajos académicos. A modo general, la figura a continuación muestra cómo funciona Rmarkdown cuando estamos empleando formato .pdf.
 
@@ -35,7 +35,7 @@ Este documento está enfocado al reporte en formato .pdf, dado que me parece má
 
 El primer cuadro es su documento en Rmarkdown, donde escriben su código en R y lo combinan con texto. [Knitr](https://yihui.name/knitr/) es el paquete que convierte todo lo que ustedes escriben a formato Markdown (.md), lo cua posteriormente es transformado por [Pandoc](https://pandoc.org/) en cualquiera de los formatos que ustedes necesiten (.pdf, .html o .doc). El resultado de este proceso es su documento final.
 
-##Software necesario para compilar en .pdf
+## Software necesario para compilar en .pdf
 
 Cuando estamos empleando documentos en .pdf, Pandoc requiere de que ustedes tengan instalado en su computador alguno de los paquetes base para escribir documentos en \LaTeX. Para esto deben instalar alguno de los paquetes disponibles, en mi caso uso [Miktex](https://miktex.org/), el cual tiene soporte para Windows, Mac y Linux. Hasta ahora no me ha dado problemas y lo recomiendo.
 
@@ -137,7 +137,6 @@ library(stargazer)
 library(dplyr) #principalmente para usar el operador %>%
 ```
 
-\pagebreak
 
 #Ejemplo con regresión usando texreg
 
@@ -168,8 +167,6 @@ texreg::htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
                custom.model.names = "Modelo 1") #si son más modelos = c("Modelo1","Modelo2")
 ```
 
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <table cellspacing="0" align="center" style="border: none;">
 <caption align="bottom" style="margin-top:0.3em;">Modelo Logit</caption>
 <tr>
@@ -318,7 +315,6 @@ texreg::htmlreg(list(m1,m2,m3), digits = 3,float.pos="h!",scalebox=0.50,
 ```
 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <table cellspacing="0" align="center" style="border: none;">
 <caption align="bottom" style="margin-top:0.3em;">Modelos Logit</caption>
 <tr>
