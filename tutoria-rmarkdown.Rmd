@@ -15,7 +15,7 @@ header-includes:
 abstract: "El presente documento tiene por objetivo facilitarles la vida a través del la elaboración de documentos a través de Rmarkdown. La gracia de los documentos con extensión ``.rmd`` permite facilitar el uso de códigos para el cálculo matemático, estimación de modelos, y, sobre todo, el reporte de sus resultados en tablas de calidad.Dentro de las posibilidades, Rmarkdown permite elaborar documentos que combinan el código nativo de ``R``, como también es posible emplear código ``.tex``, o lo que coloquialmente se le llama ``formato latex''."
 ---
 
-# YAML header
+# YAML header 
 
 El YAML header corresponde al lugar donde ustedes pueden determinar las opciones de su documento. Generalmente comenzamos poniendo el nombr, autoría y fecha de su documento. Agregué otras opciones que son útiles para dar formato a su documento, tales como el tamaño de la fuentes (fontsize), el interlineado (linestretch), márgenes (geometry) y abstract.
 
