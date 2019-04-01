@@ -37,7 +37,7 @@ El primer cuadro es su documento en Rmarkdown, donde escriben su código en R y 
 
 ## Software necesario para compilar en .pdf
 
-Cuando estamos empleando documentos en .pdf, Pandoc requiere de que ustedes tengan instalado en su computador alguno de los paquetes base para escribir documentos en \LaTeX. Para esto deben instalar alguno de los paquetes disponibles, en mi caso uso [Miktex](https://miktex.org/), el cual tiene soporte para Windows, Mac y Linux. Hasta ahora no me ha dado problemas y lo recomiendo.
+Cuando estamos empleando documentos en .pdf, Pandoc requiere de que ustedes tengan instalado en su computador alguno de los paquetes base para escribir documentos en $\LaTeX$. Para esto deben instalar alguno de los paquetes disponibles, en mi caso uso [Miktex](https://miktex.org/), el cual tiene soporte para Windows, Mac y Linux. Hasta ahora no me ha dado problemas y lo recomiendo.
 
 1. Ir a la web de [Miktex](https://miktex.org/)
 2. Descargar el instalador y ejecutarlo
@@ -67,7 +67,7 @@ Finalizado este paso, pueden comenza a trabajar con Rmarkdown sin problemas.
 
 `$e=mc^2$`  $e=mc^2$
 
-`$\alpha \chi^2 \beta$` $\alpha$  $\chi$ $\beta$
+`$\alpha \chi^2 \beta$`  $\alpha$  $\chi$ $\beta$
 
 
 
