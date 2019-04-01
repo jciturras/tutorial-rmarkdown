@@ -1,5 +1,5 @@
 
-## Cómo usar Rmarkdown: versión markdown - html
+## Cómo usar Rmarkdown: versión versión html
 ### *Julio César Iturra Sanhueza - jciturra@uc.cl*
 
 ------
@@ -27,7 +27,9 @@ abstract: "El presente documento tiene por objetivo facilitarles la vida  ..."
 
 La opción `output` tiene tres opciones para convertir su documento en `.pdf`, `.html` y `.doc`. A mi me gusta realizarlo en pdf para los informes y html para mis reportes de datos y exploración, dado que los trabajos en html pueden ser abiertos en cualquier sistema operativo sin la necesidad de un software especializado como Adove o Nitro reader (por dar algunos ejemplos).
 
-# Introducción
+\pagebreak
+
+#Introducción
 
 Este documento está enfocado al reporte en formato .pdf, dado que me parece más adecuado para el reporte de informes y trabajos académicos. A modo general, la figura a continuación muestra cómo funciona Rmarkdown cuando estamos empleando formato .pdf.
 
@@ -35,7 +37,7 @@ Este documento está enfocado al reporte en formato .pdf, dado que me parece má
 
 El primer cuadro es su documento en Rmarkdown, donde escriben su código en R y lo combinan con texto. [Knitr](https://yihui.name/knitr/) es el paquete que convierte todo lo que ustedes escriben a formato Markdown (.md), lo cua posteriormente es transformado por [Pandoc](https://pandoc.org/) en cualquiera de los formatos que ustedes necesiten (.pdf, .html o .doc). El resultado de este proceso es su documento final.
 
-## Software necesario para compilar en .pdf
+##Software necesario para compilar en .pdf
 
 Cuando estamos empleando documentos en .pdf, Pandoc requiere de que ustedes tengan instalado en su computador alguno de los paquetes base para escribir documentos en \LaTeX. Para esto deben instalar alguno de los paquetes disponibles, en mi caso uso [Miktex](https://miktex.org/), el cual tiene soporte para Windows, Mac y Linux. Hasta ahora no me ha dado problemas y lo recomiendo.
 
@@ -55,7 +57,7 @@ Finalizado este paso, pueden comenza a trabajar con Rmarkdown sin problemas.
 `##Título pequeño`
 
 
-@ Para crear numeración con interrupciones (autonumerado)
+`@.`  Para crear numeración con interrupciones (autonumerado)
 
 `1.` Para crear numeración según sus necesidades
 
@@ -73,7 +75,7 @@ Finalizado este paso, pueden comenza a trabajar con Rmarkdown sin problemas.
 
 Hay una hoja de consejos para usar Rmarkdwon que pueden encontrar [aquí](https://rmarkdown.rstudio.com/lesson-1.html). Aparecen muchos más detalles de lo que se señala en este documento.
 
-@. **Usar chunks**
+1. **Usar chunks**
 
     * el ctrl + alt + i
 
@@ -88,6 +90,7 @@ Hay una hoja de consejos para usar Rmarkdwon que pueden encontrar [aquí](https:
 * `warning=FALSE` Sirve para determinar si queremos las advertencias de R.
 * `results='asis'` Permite que el código creado por las funciones de R sea empleado en la compilación.
 * ¡run! (flecha verde o ctrl+shift+enter)
+
 
 Ejemplo:
 
@@ -106,13 +109,13 @@ velocirraptor
 ## [1] "rawr"
 ```
 
-@. **Paquetes especializados para reporte de tablas**
+2. **Paquetes especializados para reporte de tablas**
 
-    * `knitr`
-    * `kableExtra`
-    * `xtable`
-    * `texreg`
-    * `stargazer`
+  * `knitr`
+  * `kableExtra`
+  * `xtable`
+  * `texreg`
+  * `stargazer`
 
 Instalemos los paquetes:
 
@@ -166,6 +169,8 @@ texreg::htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
                               "Per.Conflicto"),
                custom.model.names = "Modelo 1") #si son más modelos = c("Modelo1","Modelo2")
 ```
+
+
 
 <table cellspacing="0" align="center" style="border: none;">
 <caption align="bottom" style="margin-top:0.3em;">Modelo Logit</caption>
@@ -290,6 +295,7 @@ texreg::htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
 </tr>
 </table>
 
+<br>
 
 ## Con modelos anidados
 
@@ -314,6 +320,7 @@ texreg::htmlreg(list(m1,m2,m3), digits = 3,float.pos="h!",scalebox=0.50,
                                      "Derecha:Conf.Social","NS/NR:Conf.Social"))
 ```
 
+<br>
 
 <table cellspacing="0" align="center" style="border: none;">
 <caption align="bottom" style="margin-top:0.3em;">Modelos Logit</caption>
@@ -609,11 +616,11 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
 <th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">No fuma</div></th>
 </tr>
   <tr>
-   <th style="text-align:left;"> \makecell[c]{Grupo de\\ edad} </th>
-   <th style="text-align:center;"> \makecell[c]{Muertes\\ } </th>
-   <th style="text-align:center;"> \makecell[c]{Persona-años\\ } </th>
-   <th style="text-align:center;"> \makecell[c]{Muertes\\} </th>
-   <th style="text-align:center;"> \makecell[c]{Persona-años\\} </th>
+   <th style="text-align:left;"> Grupo <br>  de   edad </th>
+   <th style="text-align:center;"> Muertes  </th>
+   <th style="text-align:center;"> Persona-años  </th>
+   <th style="text-align:center;"> Muertes </th>
+   <th style="text-align:center;"> Persona-años </th>
   </tr>
  </thead>
 <tbody>
@@ -656,7 +663,7 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
 </table>
 
 
-# Algunos tutoriales que me gustan:
+#Algunos tutoriales que me gustan:
 
 * [Escribir una Tesis en Rmarkdown](https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/)(Van Espen, 2017)
 * [Rmarkdown ultimate Guide](https://bookdown.org/yihui/rmarkdown/) (Xie et al. 2018)
