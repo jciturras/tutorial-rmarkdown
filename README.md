@@ -67,7 +67,7 @@ Finalizado este paso, pueden comenza a trabajar con Rmarkdown sin problemas.
 
 `$e=mc^2$`  $e=mc^2$
 
-`$\alpha \chi^2 \beta$` $\alpha \ \chi \ \beta$
+`$\alpha \chi^2 \beta$` $\alpha$  $\chi$ $\beta$
 
 
 
