@@ -9,7 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Julio César Iturra Sanhueza - jciturra@uc.cl" />
+<meta name="author" content="Julio César Iturra Sanhueza" />
 
 
 <title>Cómo usar Rmarkdown para reportes</title>
@@ -1653,7 +1653,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Cómo usar Rmarkdown para reportes</h1>
-<h4 class="author">Julio César Iturra Sanhueza - <a href="mailto:jciturra@uc.cl" class="email">jciturra@uc.cl</a></h4>
+<h4 class="author">Julio César Iturra Sanhueza</h4>
 <h4 class="date">30 julio, 2019</h4>
 <div class="abstract">
 <p class="abstract">Abstract</p>
@@ -1762,9 +1762,13 @@ library(dplyr)    #principalmente para usar el operador %&gt;% </code></pre>
 
 </div>
 </div>
-<div id="ejemplo-con-regresion-usando-texreg" class="section level1">
-<h1>Ejemplo con regresión usando texreg</h1>
+<div id="modelos-y-tablas" class="section level1">
+<h1>Modelos y tablas</h1>
+<div id="modelos-con-texreg" class="section level2">
+<h2>Modelos con <code>texreg</code></h2>
 <p>El paquete <code>texreg</code> es muy útil cuando se trata de reportar modelos de regresión, tiene bastantes funcionalidades, pero las principales son el hecho de que permite reportar modelos anidados en una sola tabla.</p>
+<div id="con-un-modelo" class="section level3">
+<h3>Con un modelo</h3>
 <pre class="r"><code>#Un logit fome...
 pl &lt;- lm(voto ~ sexo + edad + educon + ecivil + ppol+ socconf+confl, data=coes, link=&quot;logit&quot;) </code></pre>
 <pre class="r"><code>htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
@@ -2011,8 +2015,9 @@ RMSE
 </tr>
 </table>
 
-<div id="con-modelos-anidados" class="section level2">
-<h2>Con modelos anidados</h2>
+</div>
+<div id="con-modelos-anidados" class="section level3">
+<h3>Con modelos anidados</h3>
 <pre class="r"><code>#```{r, eval=TRUE, include=TRUE, message=FALSE, warning=FALSE, results=&#39;asis&#39;}
 m1=glm(voto~sexo+edad+educon+ecivil+ppol+socconf,
        data=coes, family=binomial) #Educación continua
@@ -2581,8 +2586,9 @@ Num. obs.
 </tr>
 </table>
 </div>
-<div id="kable-y-kableextra" class="section level2">
-<h2>Kable y KableExtra</h2>
+</div>
+<div id="tablas-con-kable-y-kableextra" class="section level2">
+<h2>Tablas con <code>Kable</code> y <code>KableExtra</code></h2>
 <pre class="r"><code>#```{r tabla, echo=TRUE, message=FALSE, results=&#39;asis&#39;} 
 age = c(1,2,3,4,5)
 ageF = factor(age, labels=c(&quot;35-44&quot;,&quot;45-54&quot;,&quot;55-64&quot;,&quot;65-74&quot;,&quot;75-84&quot;))
@@ -2736,7 +2742,7 @@ No fuma
 <li><a href="https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/">Escribir una Tesis en Rmarkdown</a>(Van Espen, 2017)</li>
 <li><a href="https://bookdown.org/yihui/rmarkdown/">Rmarkdown ultimate Guide</a> (Xie et al. 2018)</li>
 <li><a href="https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf">KableExtra y Latex</a> (Zhu, 2018)</li>
-<li><a href="https://holtzy.github.io/Pimp-my-rmd/#footer_and_header">Pimp-my-rmd</a> ()</li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#footer_and_header">Pimp-my-rmd</a> (Holtz, 2018)</li>
 </ul>
 </div>
 

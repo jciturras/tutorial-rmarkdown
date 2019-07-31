@@ -1,6 +1,6 @@
 ---
 title: "Cómo usar Rmarkdown para reportes"
-author: "Julio César Iturra Sanhueza - jciturra@uc.cl"
+author: Julio César Iturra Sanhueza
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 output:
   html_document: 
@@ -168,9 +168,14 @@ library(dplyr)    #principalmente para usar el operador %>%
 
 \pagebreak
 
-# Ejemplo con regresión usando texreg
+# Modelos y tablas
+
+
+## Modelos con `texreg`
 
 El paquete `texreg` es muy útil cuando se trata de reportar modelos de regresión, tiene bastantes funcionalidades, pero las principales son el hecho de que permite reportar modelos anidados en una sola tabla.
+
+### Con un modelo
 
 ```{r, include=FALSE}
 rm(list=ls())
@@ -202,7 +207,7 @@ htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
 
 \pagebreak
 
-## Con modelos anidados
+### Con modelos anidados
 
 ```{r, eval=TRUE, include=TRUE, message=FALSE, warning=FALSE, results='asis'}
 #```{r, eval=TRUE, include=TRUE, message=FALSE, warning=FALSE, results='asis'}
@@ -224,7 +229,7 @@ texreg::htmlreg(list(m1,m2,m3), digits = 3,float.pos="h!",scalebox=0.50,
                                      "Derecha:Conf.Social","NS/NR:Conf.Social"),doctype = FALSE)
 ```
 
-## Kable y KableExtra
+## Tablas con `Kable` y `KableExtra`
 
 ```{r tabla, echo=TRUE, message=FALSE, warning=FALSE, results='asis'}
 #```{r tabla, echo=TRUE, message=FALSE, results='asis'} 
@@ -255,7 +260,7 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
 * [Escribir una Tesis en Rmarkdown](https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/)(Van Espen, 2017)
 * [Rmarkdown ultimate Guide](https://bookdown.org/yihui/rmarkdown/) (Xie et al. 2018)
 * [KableExtra y Latex](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) (Zhu, 2018)
-* [Pimp-my-rmd](https://holtzy.github.io/Pimp-my-rmd/#footer_and_header) () 
+* [Pimp-my-rmd](https://holtzy.github.io/Pimp-my-rmd/#footer_and_header) (Holtz, 2018)
 
 ```{r eval=FALSE, include=FALSE}
 library(here)
