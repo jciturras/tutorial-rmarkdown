@@ -9,7 +9,8 @@ output:
       after_body: header.html
     theme: flatly
     toc: yes
-    toc_float: yes
+    toc_float: 
+      collapsed: false
 css: "style.css"  
 geometry: margin=0.78in
 linestretch: '1.15'
@@ -23,8 +24,33 @@ abstract: El presente documento tiene por objetivo facilitarles la vida a travé
 urlcolor: blue
 ---
 
-# YAML header
 
+# Introducción 
+
+## Configuración previa
+
+Este documento está enfocado al reporte en formato .pdf, dado que me parece más adecuado para el reporte de informes y trabajos académicos. A modo general, la figura a continuación muestra cómo funciona Rmarkdown cuando estamos empleando formato .pdf.
+
+```{r, echo=FALSE, out.width='70%', fig.align='center', fig.pos="h!"}
+knitr::include_graphics(c("images/rmarkdownflow.png","images/markdown2.png"))
+```
+
+El primer cuadro es su documento en Rmarkdown, donde escriben su código en R y lo combinan con texto. [Knitr](https://yihui.name/knitr/) es el paquete que convierte todo lo que ustedes escriben a formato Markdown (.md), lo cua posteriormente es transformado por [Pandoc](https://pandoc.org/) en cualquiera de los formatos que ustedes necesiten (.pdf, .html o .doc). El resultado de este proceso es su documento final.
+
+## Lo necesario para trabajar en .pdf
+
+Cuando estamos empleando documentos en .pdf, Pandoc requiere de que ustedes tengan instalado en su computador alguno de los paquetes base para escribir documentos en $\LaTeX$. Para esto deben instalar alguno de los paquetes disponibles, en mi caso uso [Miktex](https://miktex.org/), el cual tiene soporte para Windows, Mac y Linux. Hasta ahora no me ha dado problemas y lo recomiendo.
+
+1. Ir a la web de [Miktex](https://miktex.org/)
+2. Descargar el instalador y ejecutarlo
+3. Esperar que termine la descarga de los paquetes, lo cual puede demorar varios minutos.
+4. Cuando esté todo listo, reinicien su computador.
+
+Finalizado este paso, pueden comenza a trabajar con RMarkdown sin problemas.
+
+# Características de un documento
+
+## YAML header
 
 El YAML header corresponde al lugar donde ustedes pueden determinar las opciones de su documento. Generalmente comenzamos poniendo el nombr, autoría y fecha de su documento. Agregué otras opciones que son útiles para dar formato a su documento, tales como el tamaño de la fuentes (fontsize), el interlineado (linestretch), márgenes (geometry) y abstract.
 
@@ -47,29 +73,6 @@ abstract: "El presente documento tiene por objetivo facilitarles la vida  ..."
 ```
 
 La opción `output` tiene tres opciones para convertir su documento en `.pdf`, `.html` y `.doc`. A mi me gusta realizarlo en pdf para los informes y html para mis reportes de datos y exploración, dado que los trabajos en html pueden ser abiertos en cualquier sistema operativo sin la necesidad de un software especializado como Adove o Nitro reader (por dar algunos ejemplos).
-
-# Introducción 
-
-Este documento está enfocado al reporte en formato .pdf, dado que me parece más adecuado para el reporte de informes y trabajos académicos. A modo general, la figura a continuación muestra cómo funciona Rmarkdown cuando estamos empleando formato .pdf.
-
-```{r, echo=FALSE, out.width='70%', fig.align='center', fig.pos="h!"}
-knitr::include_graphics(c("images/rmarkdownflow.png","images/markdown2.png"))
-```
-
-El primer cuadro es su documento en Rmarkdown, donde escriben su código en R y lo combinan con texto. [Knitr](https://yihui.name/knitr/) es el paquete que convierte todo lo que ustedes escriben a formato Markdown (.md), lo cua posteriormente es transformado por [Pandoc](https://pandoc.org/) en cualquiera de los formatos que ustedes necesiten (.pdf, .html o .doc). El resultado de este proceso es su documento final.
-
-## Lo necesario para trabajar en .pdf
-
-Cuando estamos empleando documentos en .pdf, Pandoc requiere de que ustedes tengan instalado en su computador alguno de los paquetes base para escribir documentos en $\LaTeX$. Para esto deben instalar alguno de los paquetes disponibles, en mi caso uso [Miktex](https://miktex.org/), el cual tiene soporte para Windows, Mac y Linux. Hasta ahora no me ha dado problemas y lo recomiendo.
-
-1. Ir a la web de [Miktex](https://miktex.org/)
-2. Descargar el instalador y ejecutarlo
-3. Esperar que termine la descarga de los paquetes, lo cual puede demorar varios minutos.
-4. Cuando esté todo listo, reinicien su computador.
-
-Finalizado este paso, pueden comenza a trabajar con Rmarkdown sin problemas.
-
-# Secciones de un documento
 
 ## Elaborar títulos y enumeración
 
@@ -142,11 +145,11 @@ velocirraptor
 
 ## Paquetes en `R` 
 
-    * `knitr`
-    * `kableExtra` 
-    * `xtable`
-    * `texreg`
-    * `stargazer`
+```{r showChoro1, echo=FALSE}
+htmltools::includeHTML("tabpaquetes.html")
+```
+
+<br>
 
 Instalemos los paquetes:
 
@@ -248,14 +251,14 @@ tabla$ageF = factor(age, labels=c("35 - 44","45 - 54","55 -  64","65 - 74","75 -
 #----nuestra tabla------
 kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
       caption = "Muertes por enfermedad cardiaca después de 10 años",
-      col.names = linebreak(c("Grupo de\n edad", "Muertes\n ", "Persona-años\n ",
-                              "Muertes\n", "Persona-años\n"), align = "c")) %>%
+      col.names = linebreak(c("Grupo <br> de  edad", "Muertes ", "Persona-años ",
+                              "Muertes", "Persona-años"), align = "c")) %>%
   kable_styling(latex_options =c("hold_position"),full_width = FALSE) %>%
   add_header_above(c(" " = 1, "Fumadores" = 2, "No fuma" = 2))
 ```
 
 
-# Algunos tutoriales que me gustan:
+# Otros tutoriales
 
 * [Escribir una Tesis en Rmarkdown](https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/)(Van Espen, 2017)
 * [Rmarkdown ultimate Guide](https://bookdown.org/yihui/rmarkdown/) (Xie et al. 2018)
@@ -265,8 +268,7 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
 </style>
 <div class = "blue">
 
-Existe una hoja de consejos para usar RMarkdown que pueden encontrar [aquí](https://rmarkdown.rstudio.com/lesson-1.html). Aparecen muchos más detalles de lo que se señala en este documento. 
-
+**PISTA:** Si desdeas conocer más detalles sobre el uso de  **RMarkdown**, puedes encontrar [aquí](https://rmarkdown.rstudio.com/lesson-1.html) una guía completa de las funcionalidades del paquete.
 </div>
 
 ```{r eval=FALSE, include=FALSE}
