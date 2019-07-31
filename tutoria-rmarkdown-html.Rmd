@@ -96,14 +96,9 @@ Finalizado este paso, pueden comenza a trabajar con Rmarkdown sin problemas.
 $ e=mc^2 $
 
 ```
+
 $e=mc^2$  
 
-```
-$\hat{y} = \underbrace{{\hat{\beta}_0+\hat{\beta}_1X_1+\hat{\beta}_2X_2+\hat{\beta}_iX_i}}_\text{componente lineal} + \underbrace{\epsilon}_{\text{residuo}}$    
-
-```
-
-$\hat{y} = \underbrace{{\hat{\beta}_0+\hat{\beta}_1X_1+\hat{\beta}_2X_2+\hat{\beta}_iX_i}}_\text{componente lineal} + \underbrace{\epsilon}_{\text{residuo}}$  
 
 
 >  Si quieres conocer más símbolos puede ver [este sitio](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
