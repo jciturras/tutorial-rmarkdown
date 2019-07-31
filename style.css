@@ -3,7 +3,7 @@
 body{
   text-align: justify;
   font-size: 15px;
-}
+  }
 
 td { font-size: 14px;
 	align: center;}
@@ -24,3 +24,11 @@ h1, .h1, h2, .h2, h3, .h3 {
 .center {
   text-align: center;
 }
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #151cbad1;
+    border-color: #158cba;
+}
+

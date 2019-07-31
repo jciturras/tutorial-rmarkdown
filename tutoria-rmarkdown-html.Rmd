@@ -7,7 +7,7 @@ output:
     code_folding: show 
     includes:
       after_body: header.html
-    theme: lumen
+    theme: flatly
     toc: yes
     toc_float: yes
 css: "style.css"  
@@ -168,7 +168,7 @@ library(dplyr)    #principalmente para usar el operador %>%
 
 \pagebreak
 
-#Ejemplo con regresión usando texreg
+# Ejemplo con regresión usando texreg
 
 El paquete `texreg` es muy útil cuando se trata de reportar modelos de regresión, tiene bastantes funcionalidades, pero las principales son el hecho de que permite reportar modelos anidados en una sola tabla.
 
@@ -196,9 +196,9 @@ htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
                               "No sabe/No responde",
                               "Confianza Social",
                               "Per.Conflicto"),
-               custom.model.names = "Modelo 1") #si son más modelos = c("Modelo1","Modelo2")
+               custom.model.names = "Modelo 1",doctype = FALSE) #si son más modelos = c("Modelo1","Modelo2")
 
- ```
+```
 
 \pagebreak
 
@@ -221,7 +221,7 @@ texreg::htmlreg(list(m1,m2,m3), digits = 3,float.pos="h!",scalebox=0.50,
                                      "No sabe/No responde","Confianza Social",
                                      "Primaria","Secundaria","Técnica superior",
                                      "Universitaria","Centro:Conf.Social",
-                                     "Derecha:Conf.Social","NS/NR:Conf.Social"))
+                                     "Derecha:Conf.Social","NS/NR:Conf.Social"),doctype = FALSE)
 ```
 
 ## Kable y KableExtra
