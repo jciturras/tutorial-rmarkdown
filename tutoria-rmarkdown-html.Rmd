@@ -48,8 +48,6 @@ abstract: "El presente documento tiene por objetivo facilitarles la vida  ..."
 
 La opción `output` tiene tres opciones para convertir su documento en `.pdf`, `.html` y `.doc`. A mi me gusta realizarlo en pdf para los informes y html para mis reportes de datos y exploración, dado que los trabajos en html pueden ser abiertos en cualquier sistema operativo sin la necesidad de un software especializado como Adove o Nitro reader (por dar algunos ejemplos).
 
-\pagebreak
-
 # Introducción 
 
 Este documento está enfocado al reporte en formato .pdf, dado que me parece más adecuado para el reporte de informes y trabajos académicos. A modo general, la figura a continuación muestra cómo funciona Rmarkdown cuando estamos empleando formato .pdf.
@@ -128,7 +126,6 @@ knitr::include_graphics("images/chunk1.png")
 * `results='asis'` Permite que el código creado por las funciones de R sea empleado en la compilación. 
 * ¡run! (flecha verde o ctrl+shift+enter)
 
-\pagebreak 
 
 Ejemplo:
 
