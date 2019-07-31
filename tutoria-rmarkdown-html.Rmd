@@ -3,13 +3,8 @@ title: "Cómo usar Rmarkdown: versión versión html"
 author: "Julio César Iturra Sanhueza - jciturra@uc.cl"
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 output:
-  html_document: 
-    keep_md: yes
+  html_document
 geometry: margin=0.78in
-header-includes:
-- \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
-- \usepackage[utf8]{inputenc}
-- \usepackage{booktabs}
 linestretch: '1.15'
 linkcolor: blue
 fontsize: 11pt
@@ -161,7 +156,7 @@ library(kableExtra)
 library(xtable)
 library(texreg)
 library(stargazer)
-library(dplyr) #principalmente para usar el operador %>% 
+library(dplyr)    #principalmente para usar el operador %>% 
 ```
 
 \pagebreak
@@ -181,7 +176,8 @@ pl <- lm(voto ~ sexo + edad + educon + ecivil + ppol+ socconf+confl, data=coes, 
 ```
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE, results='asis'}
-texreg::htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
+
+htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
                digits = 3, #dígitos de la tabla
                float.pos="h!", #permite dejar la tabla fija en su lugar
                scalebox = 0.70, #indica que la tabla tiene una proporción del 75% c
@@ -194,7 +190,8 @@ texreg::htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
                               "Confianza Social",
                               "Per.Conflicto"),
                custom.model.names = "Modelo 1") #si son más modelos = c("Modelo1","Modelo2")
-```
+
+ ```
 
 \pagebreak
 
@@ -222,7 +219,7 @@ texreg::htmlreg(list(m1,m2,m3), digits = 3,float.pos="h!",scalebox=0.50,
 
 ## Kable y KableExtra
 
-```{r tabla, echo=TRUE, message=FALSE, results='asis'}
+```{r tabla, echo=TRUE, message=FALSE, warning=FALSE, results='asis'}
 #```{r tabla, echo=TRUE, message=FALSE, results='asis'} 
 age = c(1,2,3,4,5)
 ageF = factor(age, labels=c("35-44","45-54","55-64","65-74","75-84"))
@@ -241,12 +238,19 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
       caption = "Muertes por enfermedad cardiaca después de 10 años",
       col.names = linebreak(c("Grupo de\n edad", "Muertes\n ", "Persona-años\n ",
                               "Muertes\n", "Persona-años\n"), align = "c")) %>%
-  kable_styling(latex_options =c("hold_position")) %>%
+  kable_styling(latex_options =c("hold_position"),full_width = FALSE) %>%
   add_header_above(c(" " = 1, "Fumadores" = 2, "No fuma" = 2))
 ```
 
 
-#Algunos tutoriales que me gustan:
+```{r eval=FALSE, include=FALSE}
+library(here)
+rmarkdown::render(input = "tutoria-rmarkdown-html.Rmd",output_file = "index.html",encoding = "UTF-8")
+```
+
+
+
+# Algunos tutoriales que me gustan:
 
 * [Escribir una Tesis en Rmarkdown](https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/)(Van Espen, 2017)
 * [Rmarkdown ultimate Guide](https://bookdown.org/yihui/rmarkdown/) (Xie et al. 2018)
