@@ -19,8 +19,7 @@ abstract: El presente documento tiene por objetivo facilitarles la vida a travé
   con extensión ``.rmd`` permite facilitar el uso de códigos para el cálculo matemático,
   estimación de modelos, y, sobre todo, el reporte de sus resultados en tablas de
   calidad.Dentro de las posibilidades, Rmarkdown permite elaborar documentos que combinan
-  el código nativo de ``R``, como también es posible emplear código ``.tex``, o
-  lo que coloquialmente se le llama ``formato latex''.
+  el código nativo de ``R``, como también es posible emplear código ``.tex``, o también conocido como documentos en $\LaTeX$.
 urlcolor: blue
 ---
 
@@ -51,7 +50,7 @@ La opción `output` tiene tres opciones para convertir su documento en `.pdf`, `
 
 \pagebreak
 
-#Introducción 
+# Introducción 
 
 Este documento está enfocado al reporte en formato .pdf, dado que me parece más adecuado para el reporte de informes y trabajos académicos. A modo general, la figura a continuación muestra cómo funciona Rmarkdown cuando estamos empleando formato .pdf.
 
@@ -61,9 +60,9 @@ knitr::include_graphics(c("images/rmarkdownflow.png","images/markdown2.png"))
 
 El primer cuadro es su documento en Rmarkdown, donde escriben su código en R y lo combinan con texto. [Knitr](https://yihui.name/knitr/) es el paquete que convierte todo lo que ustedes escriben a formato Markdown (.md), lo cua posteriormente es transformado por [Pandoc](https://pandoc.org/) en cualquiera de los formatos que ustedes necesiten (.pdf, .html o .doc). El resultado de este proceso es su documento final.
 
-##Software necesario para compilar en .pdf
+## Lo necesario para trabajar en .pdf
 
-Cuando estamos empleando documentos en .pdf, Pandoc requiere de que ustedes tengan instalado en su computador alguno de los paquetes base para escribir documentos en \LaTeX. Para esto deben instalar alguno de los paquetes disponibles, en mi caso uso [Miktex](https://miktex.org/), el cual tiene soporte para Windows, Mac y Linux. Hasta ahora no me ha dado problemas y lo recomiendo.
+Cuando estamos empleando documentos en .pdf, Pandoc requiere de que ustedes tengan instalado en su computador alguno de los paquetes base para escribir documentos en $\LaTeX$. Para esto deben instalar alguno de los paquetes disponibles, en mi caso uso [Miktex](https://miktex.org/), el cual tiene soporte para Windows, Mac y Linux. Hasta ahora no me ha dado problemas y lo recomiendo.
 
 1. Ir a la web de [Miktex](https://miktex.org/)
 2. Descargar el instalador y ejecutarlo
@@ -72,7 +71,9 @@ Cuando estamos empleando documentos en .pdf, Pandoc requiere de que ustedes teng
 
 Finalizado este paso, pueden comenza a trabajar con Rmarkdown sin problemas.
 
-# Elaborar títulos y enumeración
+# Secciones de un documento
+
+## Elaborar títulos y enumeración
 
 `#Título grande`
 
@@ -81,7 +82,7 @@ Finalizado este paso, pueden comenza a trabajar con Rmarkdown sin problemas.
 `##Título pequeño`
 
 
-@ Para crear numeración con interrupciones (autonumerado)
+## Viñetas autonumeradas
 
 `1.` Para crear numeración según sus necesidades
 
@@ -91,15 +92,22 @@ Finalizado este paso, pueden comenza a trabajar con Rmarkdown sin problemas.
 
 ## Ecuaciones y símbolos matemáticos
 
-`$e=mc^2$`  $e=mc^2$
+```
+$ e=mc^2 $
 
-`$\alpha \chi^2 \beta$` $\alpha \ \chi \ \beta$ 
+```
+$e=mc^2$  
+```
+$ \hat{y} = \underbrace{{\hat{\beta}_0+\hat{\beta}_1X_1+\hat{\beta}_2X_2+\hat{\beta}_iX_i}}_\text{componente lineal} + \underbrace\epsilon_}_{\text{residuo}} $ 
+
+```
+
+$\hat{y} = \underbrace{{\hat{\beta}_0+\hat{\beta}_1X_1+\hat{\beta}_2X_2+\hat{\beta}_iX_i}}_\text{componente lineal} + \underbrace{~~~~~\epsilon_~~~~~}_{\text{residuo}}$ 
 
 
+>  Si quieres conocer más símbolos puede ver [este sitio](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
 
-Hay una hoja de consejos para usar Rmarkdwon que pueden encontrar [aquí](https://rmarkdown.rstudio.com/lesson-1.html). Aparecen muchos más detalles de lo que se señala en este documento. 
-
-@. **Usar chunks**
+## Usar chunks
 
     * el ctrl + alt + i
 
@@ -137,7 +145,9 @@ velocirraptor <- "rawr"
 velocirraptor
 ```
 
-@. **Paquetes especializados para reporte de tablas**
+# Reporte de Tablas
+
+## Paquetes en `R` 
 
     * `knitr`
     * `kableExtra` 
@@ -168,9 +178,6 @@ library(dplyr)    #principalmente para usar el operador %>%
 
 \pagebreak
 
-# Modelos y tablas
-
-
 ## Modelos con `texreg`
 
 El paquete `texreg` es muy útil cuando se trata de reportar modelos de regresión, tiene bastantes funcionalidades, pero las principales son el hecho de que permite reportar modelos anidados en una sola tabla.
@@ -187,7 +194,7 @@ load("coes.RData")
 pl <- lm(voto ~ sexo + edad + educon + ecivil + ppol+ socconf+confl, data=coes, link="logit") 
 ```
 
-```{r, echo=TRUE, message=FALSE, warning=FALSE, results='asis'}
+```{r echo=TRUE, message=FALSE, warning=FALSE, results='asis'}
 
 htmlreg(pl, #Si son más modelos ponemos list(m1,m2,m3)
                digits = 3, #dígitos de la tabla
@@ -261,6 +268,13 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
 * [Rmarkdown ultimate Guide](https://bookdown.org/yihui/rmarkdown/) (Xie et al. 2018)
 * [KableExtra y Latex](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) (Zhu, 2018)
 * [Pimp-my-rmd](https://holtzy.github.io/Pimp-my-rmd/#footer_and_header) (Holtz, 2018)
+
+</style>
+<div class = "blue">
+
+Existe una hoja de consejos para usar RMarkdown que pueden encontrar [aquí](https://rmarkdown.rstudio.com/lesson-1.html). Aparecen muchos más detalles de lo que se señala en este documento. 
+
+</div>
 
 ```{r eval=FALSE, include=FALSE}
 library(here)
