@@ -1,5 +1,5 @@
 ---
-title: "Cómo usar Rmarkdown para reportes"
+title: "Cómo usar R Markdown para reportes"
 author: Julio César Iturra Sanhueza
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 output:
@@ -16,10 +16,10 @@ geometry: margin=0.78in
 linestretch: '1.15'
 linkcolor: blue
 abstract: El presente documento tiene por objetivo facilitarles la vida a través
-  del la elaboración de documentos a través de Rmarkdown. La gracia de los documentos
+  del la elaboración de documentos a través de **R Markdown**. La gracia de los documentos
   con extensión ``.rmd`` permite facilitar el uso de códigos para el cálculo matemático,
   estimación de modelos, y, sobre todo, el reporte de sus resultados en tablas de
-  calidad.Dentro de las posibilidades, Rmarkdown permite elaborar documentos que combinan
+  calidad.Dentro de las posibilidades, **R Markdown** permite elaborar documentos que combinan
   el código nativo de ``R``, como también es posible emplear código ``.tex``, o también conocido como documentos en $\LaTeX$.
 urlcolor: blue
 ---
@@ -29,13 +29,13 @@ urlcolor: blue
 
 ## Configuración previa
 
-Este documento está enfocado al reporte en formato .pdf, dado que me parece más adecuado para el reporte de informes y trabajos académicos. A modo general, la figura a continuación muestra cómo funciona Rmarkdown cuando estamos empleando formato .pdf.
+Este documento está enfocado al reporte en formato .pdf, dado que me parece más adecuado para el reporte de informes y trabajos académicos. A modo general, la figura a continuación muestra cómo funciona **R Markdown**cuando estamos empleando formato .pdf.
 
 ```{r, echo=FALSE, out.width='70%', fig.align='center', fig.pos="h!"}
 knitr::include_graphics(c("images/rmarkdownflow.png","images/markdown2.png"))
 ```
 
-El primer cuadro es su documento en Rmarkdown, donde escriben su código en R y lo combinan con texto. [Knitr](https://yihui.name/knitr/) es el paquete que convierte todo lo que ustedes escriben a formato Markdown (.md), lo cua posteriormente es transformado por [Pandoc](https://pandoc.org/) en cualquiera de los formatos que ustedes necesiten (.pdf, .html o .doc). El resultado de este proceso es su documento final.
+El primer cuadro es su documento en R Markdown, donde escriben su código en R y lo combinan con texto. [Knitr](https://yihui.name/knitr/) es el paquete que convierte todo lo que ustedes escriben a formato Markdown (.md), lo cua posteriormente es transformado por [Pandoc](https://pandoc.org/) en cualquiera de los formatos que ustedes necesiten (.pdf, .html o .doc). El resultado de este proceso es su documento final.
 
 ## Lo necesario para trabajar en .pdf
 
@@ -46,7 +46,7 @@ Cuando estamos empleando documentos en .pdf, Pandoc requiere de que ustedes teng
 3. Esperar que termine la descarga de los paquetes, lo cual puede demorar varios minutos.
 4. Cuando esté todo listo, reinicien su computador.
 
-Finalizado este paso, pueden comenza a trabajar con RMarkdown sin problemas.
+Finalizado este paso, pueden comenza a trabajar con R Markdown sin problemas.
 
 # Características de un documento
 
@@ -260,7 +260,7 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
 
 # Otros tutoriales
 
-* [Escribir una Tesis en Rmarkdown](https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/)(Van Espen, 2017)
+* [Escribir una Tesis en R Markdown](https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/)(Van Espen, 2017)
 * [Rmarkdown ultimate Guide](https://bookdown.org/yihui/rmarkdown/) (Xie et al. 2018)
 * [KableExtra y Latex](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) (Zhu, 2018)
 * [Pimp-my-rmd](https://holtzy.github.io/Pimp-my-rmd/#footer_and_header) (Holtz, 2018)
@@ -268,7 +268,7 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
 </style>
 <div class = "blue">
 
-**PISTA:** Si desdeas conocer más detalles sobre el uso de  **RMarkdown**, puedes encontrar [aquí](https://rmarkdown.rstudio.com/lesson-1.html) una guía completa de las funcionalidades del paquete.
+**PISTA:** Si desdeas conocer más detalles sobre el uso de  **R Markdown**, puedes encontrar [aquí](https://rmarkdown.rstudio.com/lesson-1.html) una guía completa de las funcionalidades del paquete.
 </div>
 
 ```{r eval=FALSE, include=FALSE}
