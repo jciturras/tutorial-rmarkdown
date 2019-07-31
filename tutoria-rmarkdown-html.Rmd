@@ -1,13 +1,19 @@
 ---
-title: "Cómo usar Rmarkdown: versión versión html"
+title: "Cómo usar Rmarkdown para reportes"
 author: "Julio César Iturra Sanhueza - jciturra@uc.cl"
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 output:
-  html_document
+  html_document: 
+    code_folding: show 
+    includes:
+      after_body: header.html
+    theme: lumen
+    toc: yes
+    toc_float: yes
+css: "style.css"  
 geometry: margin=0.78in
 linestretch: '1.15'
 linkcolor: blue
-fontsize: 11pt
 abstract: El presente documento tiene por objetivo facilitarles la vida a través
   del la elaboración de documentos a través de Rmarkdown. La gracia de los documentos
   con extensión ``.rmd`` permite facilitar el uso de códigos para el cálculo matemático,
@@ -244,17 +250,16 @@ kable(tabla,format = "html", booktabs =TRUE, escape = FALSE, align = c("lcccc"),
 ```
 
 
-```{r eval=FALSE, include=FALSE}
-library(here)
-rmarkdown::render(input = "tutoria-rmarkdown-html.Rmd",output_file = "index.html",encoding = "UTF-8")
-```
-
-
-
 # Algunos tutoriales que me gustan:
 
 * [Escribir una Tesis en Rmarkdown](https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/)(Van Espen, 2017)
 * [Rmarkdown ultimate Guide](https://bookdown.org/yihui/rmarkdown/) (Xie et al. 2018)
-* [KableExtra y Latex](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) (Zhu, 2018) 
+* [KableExtra y Latex](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) (Zhu, 2018)
+* [Pimp-my-rmd](https://holtzy.github.io/Pimp-my-rmd/#footer_and_header) () 
+
+```{r eval=FALSE, include=FALSE}
+library(here)
+rmarkdown::render(input = "tutoria-rmarkdown-html.Rmd",output_file = "index.html",encoding = "UTF-8")
+```
 
 

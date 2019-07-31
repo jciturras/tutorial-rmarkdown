@@ -1,0 +1,26 @@
+
+
+body{
+  text-align: justify;
+  font-size: 15px;
+}
+
+td { font-size: 14px;
+	align: center;}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 65px;
+}
+
+.right {
+  text-align: right;
+  line-height: 0.25;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
