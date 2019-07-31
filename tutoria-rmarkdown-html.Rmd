@@ -278,7 +278,7 @@ Existe una hoja de consejos para usar RMarkdown que pueden encontrar [aquí](htt
 
 ```{r eval=FALSE, include=FALSE}
 library(here)
-rmarkdown::render(input = "tutoria-rmarkdown-html.Rmd",output_file = "index.html",encoding = "UTF-8")
+rmarkdown::render(input = "tutoria-rmarkdown-html.Rmd",output_file = "index.html",encoding = "UTF-8") 
 ```
 
 
