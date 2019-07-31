@@ -35,3 +35,18 @@ h1, .h1{
 }
 
 div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+
+
+pre {
+    display: block;
+    padding: 10px;
+    margin: 0 0 10.5px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #7b8a8b;
+    background-color: #ecf0f1;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
